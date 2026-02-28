@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://omerd7806-dev.github.io/Al-Qimma-Educational-Academy/sitemap.xml

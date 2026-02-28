@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://omerd7806-dev.github.io/Al-Qimma-Educational-Academy/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- قسم الكيمياء -->
+  <url>
+    <loc>https://omerd7806-dev.github.io/Al-Qimma-Educational-Academy/#chem</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- قسم الرياضيات -->
+  <url>
+    <loc>https://omerd7806-dev.github.io/Al-Qimma-Educational-Academy/#math</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
