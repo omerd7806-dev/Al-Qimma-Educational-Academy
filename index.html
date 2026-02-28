@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎓 أكاديمية القمة التعليمية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family:'Tajawal',Arial,sans-serif;
+  margin:0;
+  color:#fff;
+  text-align:center;
+  min-height:100vh;
+  overflow-x:hidden;
+  background:url("students.jpg") center/cover no-repeat fixed;
+  padding-top:110px; /* مساحة للهيدر والسلايدر */
+}
+
+/* ===== الهيدر البسيط ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:60px;
+  background:rgba(0,0,0,0.8); /* واضح ومرتب */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 15px;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+
+header img{
+  width:45px;
+  border-radius:50%;
+}
+
+header h1{
+  font-size:18px;
+  margin:0;
+  color:#fff;
+}
+
+/* زر اللغة */
+#langBtn{
+  padding:3px 8px;
+  border:1px solid #6c2bd9;
+  border-radius:6px;
+  background:#fff;
+  color:#6c2bd9;
+  cursor:pointer;
+  font-size:11px;
+}
+
+/* ===== شريط التنقل / السلايدر ===== */
+nav{
+  position:fixed;
+  top:60px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:10px 0;
+  background:rgba(0,0,0,0.6); /* غامق ومتناسق مع الفيديوهات والصور */
+  backdrop-filter:blur(6px);
+  z-index:999;
+  box-shadow:0 2px 8px rgba(0,0,0,0.5);
+}
+
+nav button{
+  padding:8px 16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+  background:rgba(255,255,255,0.15); /* أقل بياضًا */
+  color:#fff;
+  transition:0.3s;
+}
+
+nav button.active{
+  background:rgba(255,255,255,0.35);
+  color:#000;
+}
+
+/* ===== الأقسام ===== */
+section{
+  background:rgba(255,255,255,0.93);
+  color:#333;
+  margin:20px auto;
+  padding:25px;
+  border-radius:15px;
+  max-width:900px;
+  text-align:right;
+  backdrop-filter:blur(4px);
+}
+
+h2{
+  margin-top:0;
+  color:#6c2bd9;
+}
+
+/* الصور */
+.lesson-img{
+  width:100%;
+  border-radius:12px;
+  margin-top:15px;
+  cursor:pointer;
+}
+
+/* الفيديوهات */
+.video-card{
+  margin:18px auto;
+  padding:12px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#1f1f1f,#2c2c2c);
+  color:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
+  max-width:800px;
+}
+
+.video-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.45);
+}
+
+.video-card video{
+  border-radius:10px;
+  box-shadow:0 0 18px rgba(140,80,255,0.25);
+  width:100%;
+  height:auto;
+}
+
+/* أزرار التواصل */
+.contact-btn{
+  display:inline-block;
+  padding:7px 16px;
+  margin:6px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.contact-btn:hover{
+  transform:scale(0.95);
+}
+
+footer{
+  padding:20px;
+  font-size:14px;
+  background: rgba(0,0,0,0.25);
+}
+
+/* ===== المحتوى الرئيسي أسفل الهيدر ===== */
+.main-header-text{
+  margin-top:70px;
+  text-align:center;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<img src="c.jpg" class="logo">
+<h1 data-ar="🎓 أكاديمية القمة التعليمية" data-en="🎓 Al Qimma Educational Academy">🎓 أكاديمية القمة التعليمية</h1>
+<button id="langBtn">English</button>
+</header>
+
+<!-- نصوص الهيدر القديمة تنزل هنا -->
+<div class="main-header-text">
+<p data-ar="منصة احترافية لتعليم الكيمياء والرياضيات بطريقة حديثة" data-en="A professional platform to teach Chemistry and Mathematics in a modern way">
+منصة احترافية لتعليم الكيمياء والرياضيات بطريقة حديثة
+</p>
+</div>
+
+<nav>
+<button class="tab-btn active" onclick="showTab('chem', this)">🧪 الكيمياء</button>
+<button class="tab-btn" onclick="showTab('math', this)">📐 الرياضيات</button>
+</nav>
+
+<!-- قسم الكيمياء -->
+<section id="chem">
+<h2 data-ar="🧪 عالم الكيمياء" data-en="🧪 Chemistry World">🧪 عالم الكيمياء</h2>
+<p data-ar="الكيمياء هي لغة الطبيعة. من خلالها نفهم المواد ونتعلم التفاعلات." data-en="Chemistry is the language of nature. Through it we understand materials and reactions.">
+الكيمياء هي لغة الطبيعة. من خلالها نفهم المواد ونتعلم التفاعلات.
+</p>
+
+<img class="lesson-img" src="v.jpg" onclick="openImage(this.src)">
+<img class="lesson-img" src="n.jpg" onclick="openImage(this.src)">
+<img class="lesson-img" src="tt.jpg" onclick="openImage(this.src)">
+<div class="video-card"><h3></h3><video controls><source src="2.mp4" type="video/mp4"></video></div>
+<div class="video-card"><h3></h3><video controls><source src="3.mp4" type="video/mp4"></video></div>
+<div class="video-card"><h3></h3><video controls><source src="4.mp4" type="video/mp4"></video></div>
+
+<p data-ar="تواصل معنا لحجز الدروس" data-en="Contact us to book lessons">تواصل معنا لحجز الدروس</p>
+<a class="contact-btn" href="https://wa.me/249116211085?text=أريد درس الكيمياء">واتساب</a>
+<a class="contact-btn" href="tel:249928038599">اتصال مباشر</a>
+</section>
+
+<!-- قسم الرياضيات -->
+<section id="math" style="display:none;">
+<h2 data-ar="📐 عالم الرياضيات" data-en="📐 Math World">📐 عالم الرياضيات</h2>
+<p data-ar="الرياضيات هي أداة لفهم العالم وحل المشكلات." data-en="Mathematics is a tool to understand the world and solve problems.">
+الرياضيات هي أداة لفهم العالم وحل المشكلات.
+</p>
+
+<img class="lesson-img" src="pp.jpg" onclick="openImage(this.src)">
+<img class="lesson-img" src="oo.jpg" onclick="openImage(this.src)">
+<img class="lesson-img" src="dd.jpg" onclick="openImage(this.src)">
+<div class="video-card"><h3></h3><video controls><source src="1q.mp4" type="video/mp4"></video></div>
+<div class="video-card"><h3></h3><video controls><source src="2w.mp4" type="video/mp4"></video></div>
+<div class="video-card"><h3></h3><video controls><source src="3e.mp4" type="video/mp4"></video></div>
+
+<p data-ar="تواصل معنا لحجز الدروس" data-en="Contact us to book lessons">تواصل معنا لحجز الدروس</p>
+<a class="contact-btn" href="https://wa.me/249116211085?text=أريد درس الرياضيات">واتساب</a>
+<a class="contact-btn" href="tel:249928038599">اتصال مباشر</a>
+</section>
+
+<footer>
+© 2026 أكاديمية القمة التعليمية
+</footer>
+
+<script>
+function showTab(tab, btn){
+  document.querySelectorAll('section').forEach(s=>s.style.display='none');
+  document.getElementById(tab).style.display='block';
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// تغيير اللغة عربي/إنجليزي
+let currentLang='ar';
+document.getElementById('langBtn').onclick=()=>{
+  currentLang=currentLang==='ar'?'en':'ar';
+  document.querySelectorAll('[data-ar]').forEach(el=>{
+    el.innerText=el.getAttribute(`data-${currentLang}`);
+  });
+  document.getElementById('langBtn').innerText=currentLang==='ar'?'English':'عربي';
+}
+
+// تكبير الصور عند الضغط
+function openImage(src){
+  const lb=document.createElement('div');
+  lb.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:#000;display:flex;justify-content:center;align-items:center;z-index:9999';
+  const img=document.createElement('img'); img.src=src;
+  img.style.maxWidth='90%';
+  img.style.maxHeight='90%';
+  lb.appendChild(img); lb.onclick=()=>document.body.removeChild(lb);
+  document.body.appendChild(lb);
+}
+
+// إيقاف الفيديوهات الأخرى عند تشغيل واحد
+document.addEventListener("play", function(e){
+  const vids=document.querySelectorAll("video");
+  vids.forEach(v=>{if(v!==e.target)v.pause();});
+}, true);
+</script>
+
+</body>
+</html>
